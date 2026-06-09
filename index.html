@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>小猫消费</title>
+  <meta name="theme-color" content="#81D8D0" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="appIcon">🐱</div>
+      <div>
+        <h1>小猫消费</h1>
+        <p>两人共享 · 现金 / 卡 · 明细同步</p>
+      </div>
+    </header>
+
+    <section id="loginBox" class="card">
+      <h2>登录</h2>
+      <p class="hint">输入被允许使用的邮箱和密码。首次使用请先注册。</p>
+
+      <label>邮箱
+        <input id="emailInput" type="email" autocomplete="email" placeholder="邮箱" />
+      </label>
+      <label>密码
+        <input id="passwordInput" type="password" autocomplete="current-password" placeholder="至少 6 位密码" />
+      </label>
+
+      <div class="loginActions">
+        <button id="loginBtn">登录</button>
+        <button id="registerBtn" class="secondary">注册</button>
+      </div>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="appBox" class="hidden">
+      <div class="topbar">
+        <div>
+          <div id="userEmail" class="hint"></div>
+          <button id="logoutBtn" class="linkbtn">退出登录</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button id="cashTab" class="tab active">现金</button>
+        <button id="cardTab" class="tab">卡</button>
+      </div>
+
+      <section class="balanceCard">
+        <div id="walletTitle">现金余额</div>
+        <div id="balanceValue">0.00</div>
+      </section>
+
+      <div class="actions">
+        <button id="addRechargeBtn">+ 充值</button>
+        <button id="addTransferBtn">+ 划账/扣费</button>
+        <button id="deleteSelectedBtn" class="danger">删除选中</button>
+      </div>
+
+      <section id="recordsList" class="records"></section>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modalBox">
+      <h2 id="modalTitle">新增</h2>
+      <label>类型
+        <select id="formType">
+          <option value="recharge">充值</option>
+          <option value="transfer">划账/扣费</option>
+        </select>
+      </label>
+      <label>金额
+        <input id="formAmount" type="number" step="0.01" placeholder="例如 20.50" />
+      </label>
+      <label>用途
+        <input id="formPurpose" type="text" placeholder="例如 买菜 / 地铁 / 充值" />
+      </label>
+      <label>备注
+        <textarea id="formNote" rows="3" placeholder="可不填"></textarea>
+      </label>
+      <div class="modalActions">
+        <button id="saveBtn">保存</button>
+        <button id="cancelBtn" class="secondary">取消</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
