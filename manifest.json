@@ -1,0 +1,22 @@
+{
+  "name": "小猫消费",
+  "short_name": "小猫消费",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EFFFFD",
+  "theme_color": "#0ABAB5",
+  "description": "两人共享的现金和卡消费明细小账本。",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
